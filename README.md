@@ -158,7 +158,8 @@ We welcome contributions to Drawn2Shoe! Please refer to our [Contributing Guidel
 ## 👥Maintainers
 
 -   [**Divij Sharma**](https://github.com/dvjsharma) 
--   [**Shashank Shekhar**](https://github.com/ShashankShekhar07) 
+-   [**Shashank Shekhar**](https://github.com/ShashankShekhar07)
+-   [**Sumit Yadav**](https://github.com/Sumityvd)
 
 ## 📜License
 
