@@ -23,13 +23,21 @@ const getproducts = async (req, res) => {
             }
         });
 
+        if (!products || products.length === 0) {
+            return res.status(200).json({
+                success: true,
+                data: [],
+                message: "No products found"
+            });
+        }
+
         const result = products.map(product => ({
             categoryId: product.shoeId,
             pId: product.id,
-            shoeName: product.shoe.shoename,
-            brand: product.shoe.supplier.supplierName,
-            price: product.shoe.price,
-            shoeImage: product.shoe.shoeImage
+            shoeName: product.shoe?.shoename,
+            brand: product.shoe?.supplier?.supplierName,
+            price: product.shoe?.price || 0,
+            shoeImage: product.shoe?.shoeImage
         }));
 
         return res.status(200).json({
