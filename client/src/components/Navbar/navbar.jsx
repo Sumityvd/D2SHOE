@@ -18,7 +18,7 @@ const Navbar = () => {
   useEffect(() => {
     const checklogin = async () => {
       try {
-        const { data } = await axios.get("http://localhost:3000/api/users/me", {
+        const { data } = await axios.get("https://d2shoe.onrender.com/api/users/me", {
           headers: {
             "Content-Type": "application/json",
           },

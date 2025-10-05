@@ -4,7 +4,7 @@ import CategoryCard from "../../components/Category-card";
 const Categories = () => {
     const [data, setData] = React.useState([]);
     React.useEffect(() => {
-        fetch("http://localhost:3000/api/products/categories")
+        fetch("https://d2shoe.onrender.com/api/products/categories")
             .then((res) => res.json())
             .then((data) => setData(data.data));
     }, []);

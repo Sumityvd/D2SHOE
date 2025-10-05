@@ -4,7 +4,7 @@ import Productcard from "../../components/Product-card";
 const Shop = () => {
     const [data, setData] = React.useState([]);
     React.useEffect(() => {
-        fetch("http://localhost:3000/api/products/shop")
+        fetch("https://d2shoe.onrender.com/api/products/shop")
             .then((res) => res.json())
             .then((data) => setData(data.data));
     }, []);

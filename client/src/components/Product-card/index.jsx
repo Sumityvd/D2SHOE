@@ -9,7 +9,7 @@ const Productcard = ({ shoeImage, shoeName, brand, pId, price }) => {
   useEffect(() => {
     const fetchWishlist = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/user/wishlist", {
+        const response = await axios.get("https://d2shoe.onrender.com/api/user/wishlist", {
           withCredentials: true,
         });
         const wishlistItems = response.data.wishlist;
@@ -25,7 +25,7 @@ const Productcard = ({ shoeImage, shoeName, brand, pId, price }) => {
 
   const handleWishlistClick = async () => {
     try {
-      const response = await axios.post("http://localhost:3000/api/user/wishlist", { productId: pId }, {
+      const response = await axios.post("https://d2shoe.onrender.com/api/user/wishlist", { productId: pId }, {
         headers: {
           "Content-Type": "application/json",
         },

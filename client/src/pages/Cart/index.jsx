@@ -38,7 +38,7 @@ const Cart = () => {
 
     useEffect(() => {
         const fetchCart = async () => {
-            const { data } = await axios.get("http://localhost:3000/api/cart", {
+            const { data } = await axios.get("https://d2shoe.onrender.com/api/cart", {
                 headers: {
                     "Content-Type": "application/json",
                 },
@@ -74,7 +74,7 @@ const Cart = () => {
                 ? { ...item, quantity: item.quantity + 1 }
                 : item
         );
-        await axios.patch(`http://localhost:3000/api/cart/${productId}/increase`,{email}, { withCredentials: true });
+        await axios.patch(`https://d2shoe.onrender.com/api/cart/${productId}/increase`,{email}, { withCredentials: true });
         setCartitems(updatedItems);
     };
 
@@ -85,7 +85,7 @@ const Cart = () => {
                 ? { ...item, quantity: item.quantity - 1 }
                 : item
         );
-        await axios.patch(`http://localhost:3000/api/cart/${productId}/decrease`, {email},{ withCredentials: true });
+        await axios.patch(`https://d2shoe.onrender.com/api/cart/${productId}/decrease`, {email},{ withCredentials: true });
         setCartitems(updatedItems);
     };
 
@@ -93,7 +93,7 @@ const Cart = () => {
         const email = cartitems.find(item => item.productId === productId)?.email; 
         const updatedItems = cartitems.filter(item => item.productId !== productId);
     
-        await axios.delete(`http://localhost:3000/api/cart/${productId}`, { 
+        await axios.delete(`https://d2shoe.onrender.com/api/cart/${productId}`, { 
                 headers: { "Content-Type": "application/json" },
                 data: { email } 
          });

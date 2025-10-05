@@ -24,7 +24,7 @@ const Retailer_home = () => {
         event.preventDefault();
         try {
             const { data } = await axios.post(
-                "http://localhost:3000/api/users/retailer",
+                "https://d2shoe.onrender.com/api/users/retailer",
                 {
                     ...formData,
                 },

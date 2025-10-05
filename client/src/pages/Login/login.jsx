@@ -18,7 +18,7 @@ const Login = () => {
         if (!password) return toast.error("Please enter password");
         try {
             const { data } = await axios.post(
-                "http://localhost:3000/api/users/login",
+                "https://d2shoe.onrender.com/api/users/login",
                 {
                     email,
                     passwd: password,

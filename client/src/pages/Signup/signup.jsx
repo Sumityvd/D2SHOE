@@ -32,7 +32,7 @@ const Signup = () => {
         }
         try {
             const { data } = await axios.post(
-                "http://localhost:3000/api/users/signup",
+                "https://d2shoe.onrender.com/api/users/signup",
                 {
                     name,
                     email,

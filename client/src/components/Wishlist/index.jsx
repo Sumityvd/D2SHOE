@@ -9,7 +9,7 @@ const Wishlist = () => {
   useEffect(() => {
     const fetchWishlist = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/user/wishlist", {
+        const response = await axios.get("https://d2shoe.onrender.com/api/user/wishlist", {
           headers: {
             "Content-Type": "application/json",
           },

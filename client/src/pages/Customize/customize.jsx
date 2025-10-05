@@ -25,7 +25,7 @@ const Customize = () => {
         if (!formData.link) return toast.error("Please enter a link");
         try {
             const { data } = await axios.post(
-                "http://localhost:3000/api/products/custom",
+                "https://d2shoe.onrender.com/api/products/custom",
                 {
                     description: formData.desc,
                     image: formData.link,

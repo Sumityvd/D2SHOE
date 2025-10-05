@@ -15,7 +15,7 @@ const UserProfile = () => {
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
-        const { data } = await axios.get("http://localhost:3000/api/users/me", {
+        const { data } = await axios.get("https://d2shoe.onrender.com/api/users/me", {
           headers: {
             "Content-Type": "application/json",
           },
@@ -41,7 +41,7 @@ const UserProfile = () => {
 
   const handleSave = async () => {
     try {
-      const { data } = await axios.patch("http://localhost:3000/api/users/me", formData, {
+      const { data } = await axios.patch("https://d2shoe.onrender.com/api/users/me", formData, {
         headers: {
           "Content-Type": "application/json",
         },

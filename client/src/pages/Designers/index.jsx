@@ -20,7 +20,7 @@ const Designer_home = () => {
         event.preventDefault();
         try {
             const { data } = await axios.post(
-                "http://localhost:3000/api/users/designer",
+                "https://d2shoe.onrender.com/api/users/designer",
                 {
                     description: formData.message,
                     portfoliolink: formData.Portfolio,

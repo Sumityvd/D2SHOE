@@ -19,7 +19,7 @@ const Product = () => {
         }
         try {
             const { data } = await axios.post(
-                "http://localhost:3000/api/cart/add",
+                "https://d2shoe.onrender.com/api/cart/add",
                 {
                     pId,
                     price,
