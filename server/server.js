@@ -1,6 +1,8 @@
 import { app } from "./app.js";
 
 
-app.listen(process.env.PORT, () => {
-    console.log("Server is up and burning!");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`Server is up and burning on port ${PORT}!`);
 })

@@ -10,16 +10,15 @@ import wishlistrouter from "./routes/wishlist.js";
 export const app = express();
 
 
-config({
-    path: "config.env",
-});
+config();
 
 export const prisma = new PrismaClient(); // Initialized PrismaClient
 
 app.use(cors({
-    origin: true,
+    origin: ['http://localhost:5173', 'http://localhost:3000', 'http://127.0.0.1:5173'],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
+    optionsSuccessStatus: 200
 }));
 
 app.use(express.json());
