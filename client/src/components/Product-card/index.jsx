@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
-
+import PropTypes from 'prop-types';
 
 const Productcard = ({ shoeImage, shoeName, brand, pId, price }) => {
   const [isInWishlist, setIsInWishlist] = useState(false);
@@ -100,6 +100,14 @@ const Productcard = ({ shoeImage, shoeName, brand, pId, price }) => {
       </button>
     </div>
   );
+};
+
+Productcard.propTypes = {
+  shoeImage: PropTypes.string.isRequired,
+  shoeName: PropTypes.string.isRequired,
+  brand: PropTypes.string.isRequired,
+  pId: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired
 };
 
 export default Productcard;

@@ -47,7 +47,7 @@ const Designer_home = () => {
                         <div className="w-full p-8 my-4 md:px-12 lg:w-9/12 lg:pl-20 lg:pr-40 mr-auto rounded-2xl shadow-2xl">
                             <div className="flex">
                                 <h1 className="text-5xl font-serif font-800">
-                                    Wassup! <br /> Let's get in touch
+                                    Wassup! <br /> Let&apos;s get in touch
                                 </h1>
                             </div>
                             <div className="grid grid-cols-1 gap-5 md:grid-cols-2 mt-5">

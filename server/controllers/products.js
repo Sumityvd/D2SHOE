@@ -6,8 +6,8 @@ const getproducts = async (req, res) => {
     try {
         const products = await prisma.product.findMany({
             select: {
+                id: true,
                 shoeId: true,
-                productId: true,
                 shoe: {
                     select: {
                         shoename: true,
@@ -25,7 +25,7 @@ const getproducts = async (req, res) => {
 
         const result = products.map(product => ({
             categoryId: product.shoeId,
-            pId: product.productId,
+            pId: product.id,
             shoeName: product.shoe.shoename,
             brand: product.shoe.supplier.supplierName,
             price: product.shoe.price,
@@ -94,8 +94,16 @@ const getproductbyid = async (req, res) => {
 const getcategories = async (req, res) => {
     try {
         const categories = await prisma.shoe.findMany({
-            include: {
-                supplier: true
+            select: {
+                id: true,
+                shoename: true,
+                price: true,
+                shoeImage: true,
+                supplier: {
+                    select: {
+                        supplierName: true
+                    }
+                }
             }
         });
 

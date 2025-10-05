@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { Divide } from "hamburger-react";
 import { stack as Menu } from "react-burger-menu";
@@ -8,7 +8,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { logOut, setUsername } from "../../redux/auth-slice";
 
 const Navbar = () => {
-  const [user, setUser] = useState();
   const [dropdownOpen, setDropdownOpen] = useState(false); // Added state for dropdown
   const dispatch = useDispatch();
   const logged = useSelector((state) => state.auth.value.isAuth);
@@ -35,7 +34,7 @@ const Navbar = () => {
     if (logged) {
       checklogin();
     }
-  }, [logged]);
+  }, [logged, dispatch]);
 
   // Adding a dropdown on profile photo
   const handleProfileClick = () => {
@@ -214,17 +213,17 @@ const Navbar = () => {
         )}
         {logged && (
           <div className="flex w-[20%] text-base items-center justify-center gap-8 max-lg:w-full max-lg:justify-end">
-            <button onClick={() => handleNavigation("cart")}>
+            <button onClick={() => handleNavigation("/cart")}>
               {/* Used handleNavigation for cart button */}
               <img
                 src="https://icons.veryicon.com/png/o/miscellaneous/unicons/cart-38.png"
                 className="w-8"
-                alt=""
+                alt="Cart"
               />
             </button>
             <div className="relative">
               <img
-                src={userProfile || "../src/assets/avatar.svg"}
+                src={userProfile || "/avatar.svg"}
                 alt="Profile"
                 className="rounded-full border w-8 cursor-pointer"
                 onClick={handleProfileClick} 
